@@ -4,9 +4,14 @@
  * Automatically included in `./src/main.js`
  */
 
-// Plugins
-import vuetify from './vuetify'
+// Composables
+import { DefaultApolloClient } from "@vue/apollo-composable";
 
-export function registerPlugins (app) {
-  app.use(vuetify)
+// Plugins
+import vuetify from "./vuetify";
+import { apolloClient } from "./apollo";
+
+export function registerPlugins(app) {
+  app.use(vuetify);
+  app.provide(DefaultApolloClient, apolloClient);
 }

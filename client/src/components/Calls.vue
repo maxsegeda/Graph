@@ -1,10 +1,9 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import { useLayout } from "vuetify";
 import gql from "graphql-tag";
 import { useQuery } from "@vue/apollo-composable";
 
-const isOpen = ref(false);
 const { getLayoutItem, mainRect } = useLayout();
 
 onMounted(() => {
@@ -12,7 +11,7 @@ onMounted(() => {
   console.info("mainRect ", mainRect);
 });
 
-console.info("layout ", getLayoutItem("app-bar"));
+console.info("layout ", getLayoutItem("app"));
 const { result } = useQuery(
   gql`
     query callsHistory($phone: PhoneNumber) {
@@ -34,3 +33,4 @@ const { result } = useQuery(
 </template>
 
 <style lang="scss" scoped></style>
+
