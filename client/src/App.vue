@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <v-text-field v-model="phone" label="Телефон"></v-text-field>
     <div>
       <Calls :phone="phone" />
     </div>
