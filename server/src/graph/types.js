@@ -4,23 +4,21 @@ import { typeDefs as scalarTypeDefs } from "graphql-scalars";
 let schema = `
 scalar PhoneNumber
 scalar DateTime
-cd
+
 type Query {
     status: String
     callsHistory: CallsHistoryQuery
 }
 
 type CallsHistoryQuery {
-    history(phone: PhoneNumber): [PhoneEvent]
+    history: [PhoneEvent]
     status: StatusResponse
 }
 
 type PhoneEvent {
     _id: ID!
-    "Дата створення"
     created: DateTime
     name: String
-    "Номер телефону"
     phone: PhoneNumber
 }
 

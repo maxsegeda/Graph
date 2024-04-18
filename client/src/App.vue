@@ -1,8 +1,6 @@
 <template>
-  <v-app name="app" v-model="phone">
-    <div>
-      <Calls :phone="phone" />
-    </div>
+  <v-app>
+    <Calls :phone="phone" />
   </v-app>
 </template>
 
@@ -20,5 +18,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>
